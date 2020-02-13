@@ -3,6 +3,7 @@ package com.fis.usernotesapp.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.fis.usernotesapp.exception.UserNotesException;
 import com.fis.usernotesapp.model.Users;
 
 /**
@@ -16,12 +17,12 @@ public interface UserService {
 	  * Method to get all  users list stored in the database
 	 * @return List<Users>
 	 */
-	List<Users> getAllUsersData();
+	List<Users> getAllUsersData() throws UserNotesException;
 	
 	/**
 	 * Method to get User details on the basis of UserId
 	 * @param emailId
 	 * @return
 	 */
-	Optional<Users> getUserDetailsByMailId(String emailId);
+	Optional<Users> getUserDetailsByMailId(String emailId) throws UserNotesException;
 }

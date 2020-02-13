@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fis.usernotesapp.dao.UserDao;
+import com.fis.usernotesapp.exception.UserNotesException;
 import com.fis.usernotesapp.model.Users;
 
 /**
@@ -23,12 +24,12 @@ public class UserServiceImpl implements UserService{
 	UserDao userDao;
 	
 	@Override
-	public Optional<Users> getUserDetailsByMailId(String emailId) {
+	public Optional<Users> getUserDetailsByMailId(String emailId) throws UserNotesException{
 		return userDao.getUserByMailId(emailId);
 	}
 
 	@Override
-	public List<Users> getAllUsersData() {
+	public List<Users> getAllUsersData() throws UserNotesException{
 		return userDao.getUsersList();
 	}
 }

@@ -14,6 +14,14 @@ I) Key Points:-
 
 5. Added authorities table to provide to the user having emailId.
 
+6. Added URLs to access/perform CRUD operations on Users and Notes Table. 
+
+7. Added validations to validate title,note columns of Notes Table for null and blank cases.
+   
+8. Added validations to validate emailId from Users table for unique/valid case.
+
+9. Added feature to allow logged in user to view/update/delete their own notes only.
+
 II) Instructions for database setup:-
 1. Create Database:- 
   command:- 
@@ -54,9 +62,46 @@ VALUES
 III) Resource URLs:-
 
 i) Users Table operations URls:-
-  -To get list of all users in database:-
-   URL: http://localhost:8090/UserNotes/getUsers
+ a)To get list of all users in database:-
+   URL: http://localhost:8090/UserNotesApp/getUsers
   
-  -To get user details on the basis of EmailId:-
-   URL: http://localhost:8090/UserNotes/getUser/{emailId} 
-   Example: http://localhost:8090/UserNotes/getUser/akhilgarg11@gmail.com
+ b)To get user details on the basis of EmailId:-
+   URL: http://localhost:8090/UserNotesApp/getUser/{emailId} 
+   Example: http://localhost:8090/UserNotesApp/getUser/akhilgarg11@gmail.com
+
+ii) Notes Table Operations URLs:-
+ a)To get all notes assigned to a particular user on the basis of emailId:-
+	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes
+	Request Method Type: GET
+	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes
+	
+ b)To store a note in database to be assigned to a particular user:-
+	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes 
+	Request Method Type: POST
+	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes
+	
+	Add Body of Note in Content Type- Application/JSON to create Notes Object.
+	Example:- 
+	{
+	"title": "Sample Note",
+	"note": "Sample Note inserted in database"
+	}
+	NOTE: On save operation, Newly created Note object is returned in response.
+	
+ c)To update existing note stored in database against a use:-
+	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes/{noteId}
+	Request Method Type: PUT
+	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes/1
+	Add Body of Note in Content Type- Application/JSON to create Notes Object.
+	Example:- 
+	{
+	"title": "Sample Note",
+	"note": "Sample Note inserted in database"
+	}
+	NOTE: On update operation, Newly created Note object is returned in response.
+	
+ d)To update existing note stored in database against a use:-
+	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes/{noteId}
+	Request Method Type: DELETE
+	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes/1
+	
