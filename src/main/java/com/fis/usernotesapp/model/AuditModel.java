@@ -1,4 +1,4 @@
-package com.fis.uersnotesapp.model;
+package com.fis.usernotesapp.model;
 
 import java.io.Serializable;
 import java.util.Date;

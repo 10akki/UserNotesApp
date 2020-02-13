@@ -3,7 +3,7 @@ package com.fis.usernotesapp.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.fis.uersnotesapp.model.Users;
+import com.fis.usernotesapp.model.Users;
 
 /**
  * Service class to implement business logic related to users entity

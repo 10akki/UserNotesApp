@@ -1,4 +1,4 @@
-package com.fis.uersnotesapp.model;
+package com.fis.usernotesapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

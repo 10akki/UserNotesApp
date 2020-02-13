@@ -3,7 +3,7 @@ package com.fis.usernotesapp.dao;
 import java.util.List;
 import java.util.Optional;
 
-import com.fis.uersnotesapp.model.Users;
+import com.fis.usernotesapp.model.Users;
 
 /**
  * Dao Class to perform CRUD operations on Users entity

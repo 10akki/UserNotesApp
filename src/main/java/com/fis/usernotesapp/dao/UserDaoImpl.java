@@ -8,9 +8,10 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.fis.uersnotesapp.model.Users;
+import com.fis.usernotesapp.model.Users;
 
 /**
  * Dao class to handle CRUD operations on Users entity
@@ -21,6 +22,7 @@ import com.fis.uersnotesapp.model.Users;
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
+	@Qualifier("sessionFactory")
 	private SessionFactory sessionFactory;
 	
 	/**
@@ -44,7 +46,7 @@ public class UserDaoImpl implements UserDao {
 	public Optional<Users> getUserByMailId(String mailId) {
 		 Query query=getSession().createQuery("from Users where emailId=:mailId");
 		 query.setParameter("mailId", mailId);
-		 List<Users> users=query.getResultList();
+		 List<Users> users=(List<Users>)query.getResultList();
 		 if(!users.isEmpty())
 			 return users.stream().findFirst();
 		 return Optional.empty();

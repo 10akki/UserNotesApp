@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fis.uersnotesapp.model.Users;
+import com.fis.usernotesapp.model.Users;
 import com.fis.usernotesapp.service.UserService;
+import com.fis.usernotesapp.util.UserNotesUtil;
 
 /**
  * Restcontroller class to handle user related Rest calls
@@ -38,6 +39,7 @@ public class UserController {
 	 */
 	@GetMapping(path = "/getUser/{emailId}")
 	public Optional<Users> getUserByMailId(@PathVariable("emailId") String emailId){
+		UserNotesUtil.validateLoggedInUserWithMailId(emailId);
 		return userService.getUserDetailsByMailId(emailId);
 	}
 }

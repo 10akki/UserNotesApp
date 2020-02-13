@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fis.uersnotesapp.model.Users;
 import com.fis.usernotesapp.dao.UserDao;
+import com.fis.usernotesapp.model.Users;
 
 /**
  * Service Implementation class

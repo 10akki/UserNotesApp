@@ -7,9 +7,9 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.fis.uersnotesapp.model.Users;
 import com.fis.usernotesapp.dao.UserDaoImpl;
 import com.fis.usernotesapp.exception.UserNotesException;
+import com.fis.usernotesapp.model.Users;
 
 
 /**
