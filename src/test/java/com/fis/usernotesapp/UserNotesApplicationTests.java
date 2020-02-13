@@ -1,12 +1,11 @@
-package com.fis.UserNotes;
+package com.fis.usernotesapp;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class UserNotesApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
