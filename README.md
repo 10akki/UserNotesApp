@@ -58,27 +58,30 @@ INSERT INTO `authorities`
 VALUES ('akhilgarg11@gmail.com','ROLE_EMPLOYEE'),('akki10garg@gmail.com','ROLE_EMPLOYEE');  
  
 III) Resource URLs:-  
-
 i) Users Table operations URls:-   
  a)To get list of all users in database:-  
    URL: http://localhost:8090/UserNotesApp/getUsers  
    Request Method Type: GET  
+   Response Code: 200(SUCCESS: On successful retreival of records)     
   
  b)To get user details on the basis of EmailId:-    
    URL: http://localhost:8090/UserNotesApp/getUser/{emailId}  
    Request Method Type: GET  
    Example: http://localhost:8090/UserNotesApp/getUser/akhilgarg11@gmail.com  
-
+   Response Code: 200(SUCCESS: On successful retreival of record)   
+   
 ii) Notes Table Operations URLs:-  
  a)To get all notes assigned to a particular user on the basis of emailId:-    
 	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes  
 	Request Method Type: GET  
 	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes  
+	Response Code: 200(SUCCESS: On successful retreival of records)  
 	
  b)To store a note in database to be assigned to a particular user:-   
 	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes   
 	Request Method Type: POST   
 	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes  
+	Response Code: 201(CREATED: on successful addition of note)   
 	
 	Add Body of Note in Content Type- Application/JSON to create Notes Object.
 	Example:- 
@@ -87,12 +90,13 @@ ii) Notes Table Operations URLs:-
 	"note": "Sample Note inserted in database"
 	}
 	
-	NOTE: On save operation, Newly created Note object is returned in response.
+	NOTE: On save operation, Newly created Note object is returned in the response.
 	
  c)To update existing note stored in database against a use:-   
 	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes/{noteId}  
 	Request Method Type: PUT   
 	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes/1 
+	Response Code: 200(SUCCESS: If update successful), 404(NOT FOUND: If noteId/emailId is not found in database)   
 	
 	Add Body of Note in Content Type- Application/JSON to create Notes Object.
 	Example:- 
@@ -101,10 +105,10 @@ ii) Notes Table Operations URLs:-
 	"note": "Sample Note inserted in database"
 	}
 	
-	NOTE: On update operation, Newly created Note object is returned in response.
+	NOTE: On update operation, updated Note object is returned in the response.
 	
- d)To update existing note stored in database against a use:-   
+ d)To update existing note stored in database against a user:-   
 	URL:-http://localhost:8090/UserNotesApp/users/{emailId}/notes/{noteId}  
 	Request Method Type: DELETE  
 	Example:- http://localhost:8090/UserNotesApp/users/akhilgarg11@gmail.com/notes/1
-	
+	Response Code: 200(SUCCESS: If delete successful), 404(NOT FOUND: If noteId/emailId is not found in database)   
