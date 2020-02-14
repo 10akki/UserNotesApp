@@ -55,7 +55,7 @@ CREATE TABLE authorities (
 ii) Insert Script:-
 
 INSERT INTO `authorities` 
-VALUES ('akhilgarg11@gmail.com','ROLE_EMPLOYEE'),('akki10garg@gmail.com','ROLE_EMPLOYEE');  
+VALUES ('akhilgarg11@gmail.com','ROLE_ADMIN'),('akki10garg@gmail.com','ROLE_EMPLOYEE');  
  
 III) Resource URLs:-  
 i) Users Table operations URls:-   
@@ -63,6 +63,7 @@ i) Users Table operations URls:-
    URL: http://localhost:8090/UserNotesApp/getUsers  
    Request Method Type: GET  
    Response Code: 200(SUCCESS: On successful retreival of records)     
+   NOTE: Only 'akhilgarg11@gmail.com' user is allowed to see all users list. His Role is 'ROLE_ADMIN'.       
   
  b)To get user details on the basis of EmailId:-    
    URL: http://localhost:8090/UserNotesApp/getUser/{emailId}  
