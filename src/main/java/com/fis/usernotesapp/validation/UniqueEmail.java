@@ -18,7 +18,7 @@ import javax.validation.Payload;
 @Target({ ElementType.FIELD })
 public @interface UniqueEmail {
 
-	public String message() default "There is already user with this email!";
+	public String message() default "A user with the entered email Id already exists in the system.";
 	
 	public Class<?>[] groups() default {};
 	

@@ -46,7 +46,7 @@ public class Users extends AuditModel {
 	 */
 	@NotBlank(message = "Email Id cannot be blank")
 	@UniqueEmail
-	@Email
+	@Email(message = "Kindly enter valid email Id")
 	@Column(name="username",nullable = false)
 	private String emailId; 
  
